@@ -220,7 +220,7 @@
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pg6-t9-cH9">
                                         <rect key="frame" x="0.0" y="217" width="304" height="44"/>
                                         <items>
-                                            <barButtonItem title="Record" id="mVF-Ih-SsO">
+                                            <barButtonItem enabled="NO" title="Play" id="mVF-Ih-SsO">
                                                 <connections>
                                                     <action selector="recordButtonPressed:" destination="vAq-dH-0Fi" id="8qD-fL-bth"/>
                                                 </connections>

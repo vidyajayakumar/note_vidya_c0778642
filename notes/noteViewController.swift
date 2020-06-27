@@ -52,7 +52,6 @@ class noteViewController: UIViewController, UITextFieldDelegate,  UINavigationCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // get Date
         let date = getNoteDate(date: Date.init(seconds: noteDateTime))
 //        print("Date: ",date)
