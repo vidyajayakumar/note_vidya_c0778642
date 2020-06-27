@@ -3,7 +3,7 @@
 import UIKit
 import CoreData
 
-class noteTableViewController: UITableViewController {
+class noteTableViewController: UITableViewController, UITextViewDelegate {
     
     @IBOutlet weak var noteCatSorter: UIBarButtonItem!
     @IBOutlet weak var noteReloader: UIBarButtonItem!
@@ -32,7 +32,10 @@ class noteTableViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         tableView.delegate = self
         tableView.dataSource = self
-                
+        
+        hideKeyboardWhenTappedAround()
+        
+
         retrieveNotes()
         
         // Styles
@@ -47,9 +50,6 @@ class noteTableViewController: UITableViewController {
         retrieveNotes()
     }
     
-
-    
-
 
     
     // Category load Selector =======================
@@ -229,14 +229,20 @@ class noteTableViewController: UITableViewController {
         }
     }
     
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
     
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
 
 }
 
 extension noteTableViewController: UISearchBarDelegate, UISearchDisplayDelegate{
     // Search   =========================================
-
-  
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
         if !searchText.isEmpty {
@@ -262,12 +268,5 @@ extension noteTableViewController: UISearchBarDelegate, UISearchDisplayDelegate{
         searchBar.text = nil
         retrieveNotes()
     }
-
-
 //    Search end =========================================
-    
-    
-
-    
-    
 }

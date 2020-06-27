@@ -56,7 +56,7 @@ class noteViewController: UIViewController, UITextFieldDelegate,  UINavigationCo
         // get Date
         let date = getNoteDate(date: Date.init(seconds: noteDateTime))
 //        print("Date: ",date)
-        
+        hideKeyboardWhenTappedAround()
         
         // Load data from Tableview
         if let note = note {
@@ -129,12 +129,11 @@ class noteViewController: UIViewController, UITextFieldDelegate,  UINavigationCo
     }
 
     // Record --------------------
-    
     func recordSession() {
         recordingSession = AVAudioSession.sharedInstance()
         do {
             
-            //            try recordingSession.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
+//            try recordingSession.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
 //            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [])
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission() { [unowned self] allowed in
@@ -533,7 +532,6 @@ class noteViewController: UIViewController, UITextFieldDelegate,  UINavigationCo
         delFile()
         if isPresentingInAddFluidPatientMode {
             dismiss(animated: true, completion: nil)
-            
         }
         
         else {
@@ -541,25 +539,22 @@ class noteViewController: UIViewController, UITextFieldDelegate,  UINavigationCo
         }
     }
     
-    // Text field
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return false
-//    }
-//
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if(text == "\n") {
-//            textView.resignFirstResponder()
-//            return false
-//        }
-//        return true
-//    }
-//
-    func textViewDidBeginEditing(_ textView: UITextView) {
+   func textViewDidBeginEditing(_ textView: UITextView) {
         if (textView.text == "Note Description...") {
             textView.text = ""
         }
     }
+    // Dismiss keyboard =====
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    // ======
 }
 
 extension UITextField {
