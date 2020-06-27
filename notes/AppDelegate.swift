@@ -11,19 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-//        UINavigationBar.appearance().barTintColor = UIColor(red: 245.0/255.0, green: 79.0/255.0, blue: 80.0/255.0, alpha: 1.0)
-//        UINavigationBar.appearance().tintColor = UIColor(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-//        let color = UIColor(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-//        let font = UIFont(name: "Roboto-Medium", size: 18)!
-//
-//        let attributes: [NSAttributedStringKey: AnyObject] = [
-//            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): color,
-//            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font
-//        ]
-//
-//        UINavigationBar.appearance().titleTextAttributes = attributes
-//
-        UIApplication.shared.statusBarStyle = .default
+//        UIApplication.shared.statusBarStyle = .default
 
         
         return true

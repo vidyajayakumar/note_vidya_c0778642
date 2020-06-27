@@ -21,28 +21,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note                          Vidya                 C0778642" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfA-Ko-CQX">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
-                                <color key="backgroundColor" red="0.50228705257816375" green="0.38333625029687157" blue="0.89665641191709844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="0.0" height="-2"/>
-                            </label>
+                            <view contentMode="scaleAspectFill" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="8Yy-3c-HXh">
+                                <rect key="frame" x="127" y="415" width="185" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfA-Ko-CQX">
+                                        <rect key="frame" x="0.0" y="7" width="185" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Note App                          RVV">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" metaFont="system" size="40"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.0" height="-2"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.50228705259999995" green="0.38333625030000001" blue="0.89665641190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.41960784313725491" green="0.84705882352941175" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="TfA-Ko-CQX" secondAttribute="bottom" id="ATv-E2-OMw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TfA-Ko-CQX" secondAttribute="trailing" id="DKn-bI-UmH"/>
-                            <constraint firstItem="TfA-Ko-CQX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="UYq-eb-CIh"/>
-                            <constraint firstItem="TfA-Ko-CQX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="VqT-YU-K9M"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="8Yy-3c-HXh" secondAttribute="bottom" constant="353" id="P3S-Sb-qWx"/>
+                            <constraint firstItem="8Yy-3c-HXh" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="371" id="cVS-Vx-cy8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Yy-3c-HXh" secondAttribute="trailing" constant="82" id="tJa-98-Noh"/>
+                            <constraint firstItem="8Yy-3c-HXh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="127" id="zQY-id-6lt"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.33035714285711"/>
         </scene>
     </scenes>
 </document>

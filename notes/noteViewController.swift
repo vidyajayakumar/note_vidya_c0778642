@@ -365,18 +365,27 @@ class noteViewController: UIViewController, UITextFieldDelegate,  UINavigationCo
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
 
+        categoryController.view.isUserInteractionEnabled = true
+        categoryController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+        
         categoryController.addAction(catWork)
         categoryController.addAction(catJournal)
         categoryController.addAction(catImportant)
         categoryController.addAction(catSchool)
         categoryController.addAction(catPersonal)
         categoryController.addAction(catOthers)
+        
 
         categoryController.addAction(cancelAction)
 
         present(categoryController, animated: true, completion: nil)
         }
-        
+    
+    @objc func alertControllerBackgroundTapped()
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func noteCategorySelected(noteCategory: String){
         print(noteCategory)
         noteCatSelected = noteCategory
@@ -554,6 +563,7 @@ class noteViewController: UIViewController, UITextFieldDelegate,  UINavigationCo
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
+
     // ======
 }
 

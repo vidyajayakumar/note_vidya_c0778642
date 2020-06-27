@@ -90,6 +90,9 @@ class noteTableViewController: UITableViewController, UITextViewDelegate {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         
+        categoryController.view.superview?.isUserInteractionEnabled = true
+        categoryController.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+        
         categoryController.addAction(catWork)
         categoryController.addAction(catJournal)
         categoryController.addAction(catImportant)
@@ -101,7 +104,10 @@ class noteTableViewController: UITableViewController, UITextViewDelegate {
         
         present(categoryController, animated: true, completion: nil)
     }
-    
+    @objc func alertControllerBackgroundTapped()
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     func noteCategoryFetchTable(noteCategory: String){
         print(noteCategory)
@@ -233,11 +239,13 @@ class noteTableViewController: UITableViewController, UITextViewDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
+        
     }
     
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
+    
 
 }
 
